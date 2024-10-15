@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admins Responsibilities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: left;
+    }
+    .hidden-content {
+      display: none;
+    }
+    input[type="password"] {
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 80%;
+    }
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      background-color: #78b9ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="main-container">
+  <h2>This page is password-protected</h2>
+  <p>Please enter the password to view the content:</p>
+  <form id="password-form">
+    <input type="password" id="password" placeholder="Enter password here">
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div id="content" class="hidden-content">
+    <h2>Admins Responsibilities</h2>
+    <ol>
+      <li>Give Quizzes</li>
+      <li>Invite New Members</li>
+      <li>Moderate the Server</li>
+      <li>Help Members with Server-Related Questions</li>
+      <li>Keep the Chat Active and Engaging</li>
+      <li>Manage Tickets</li>
+      <li>Welcome and Guide New Members</li>
+      <li>Assist with Bot and Automation Setup</li>
+      <li>Monitor Channels for Spam or Inappropriate Content</li>
+      <li>Manage User Disputes and Conflicts</li>      
+    </ol>
+  </div>
+</div>
+
+<script>
+  document.getElementById('password-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const inputPassword = document.getElementById('password').value;
+    const correctPassword = 'Tirtha_notion@admin/dev@1234';
+    
+    if (inputPassword === correctPassword) {
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('password-form').style.display = 'none';
+      // Remove the password prompt text
+      document.getElementById('main-container').innerHTML = document.getElementById('content').innerHTML;
+    } else {
+      alert('Incorrect password. Please try again.');
+    }
+  });
+</script>
+
+</body>
+</html>
